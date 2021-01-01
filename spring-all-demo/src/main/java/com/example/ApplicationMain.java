@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.bean.*;
+import org.mybatis.spring.mapper.ClassPathMapperScanner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
