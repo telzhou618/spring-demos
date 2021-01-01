@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-/**
+/**  BeanFactoryPostProcessor 可以得到所有bean 的 BeanDefinition, 可以随性所欲的修改它
  * @author jameszhou
  */
 @Component
