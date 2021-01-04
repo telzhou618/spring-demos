@@ -46,7 +46,7 @@ public class User implements InitializingBean, BeanFactoryPostProcessor, BeanPos
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("postProcessBeforeInitialization");
+        System.out.println("postProcessAfterInitialization");
         return bean;
     }
 }
