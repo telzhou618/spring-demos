@@ -14,6 +14,6 @@ public class ApplicationMain {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(ConfigMain.class);
         System.out.println(context.getBean(User.class));
-        System.out.println(context.getBean(Student.class));
+        System.out.println(context.getBean(Student.class).getEnvironment());
     }
 }

@@ -21,24 +21,30 @@ public class User implements InitializingBean, BeanFactoryPostProcessor, BeanPos
         System.out.println("new User()");
     }
 
+    @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("afterPropertiesSet");
     }
 
+    @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         System.out.println("postProcessBeanFactory");
     }
+
+
 
 
     /**
      * finishBeanFactoryInitialization 触发
      */
 
+    @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessBeforeInitialization");
         return bean;
     }
 
+    @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessBeforeInitialization");
         return bean;
