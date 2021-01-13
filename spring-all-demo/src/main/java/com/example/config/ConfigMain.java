@@ -1,11 +1,13 @@
-package com.example;
+package com.example.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
@@ -14,13 +16,16 @@ import javax.sql.DataSource;
  */
 @Configuration
 @MapperScan("com.example.mapper")
-public class MybatisConfig {
+@ComponentScan("com.example")
+public class ConfigMain {
 
 
     @Bean(name = "sqlSessionFactory")
-    public SqlSessionFactory juteSqlSessionFactory() throws Exception {
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
+        factoryBean.setMapperLocations(
+                new PathMatchingResourcePatternResolver().getResources("classpath*:mapper/*.xml"));
         return factoryBean.getObject();
     }
 

@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.config.ConfigMain;
 import com.example.ioc.Student;
 import com.example.ioc.User;
 import com.example.mapper.UserMapper;
@@ -17,6 +18,7 @@ public class ApplicationMain {
         System.out.println(context.getBean(User.class));
         System.out.println(context.getBean(Student.class));
 
-        System.out.println(context.getBean(UserMapper.class));
+        System.out.println(context.getBean(UserMapper.class).selectById(1));
+
     }
 }
