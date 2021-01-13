@@ -22,8 +22,10 @@ public class MyBatisMain {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        System.out.println(userMapper.selectById(1));
+        // 1
+        System.out.println(sqlSession.getMapper(UserMapper.class).selectById(1));
+        // 3
+        System.out.println(sqlSession.selectOne("selectById", 1));
 
     }
 }
