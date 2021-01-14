@@ -1,6 +1,9 @@
 package com.example.mapper;
 
 import com.example.entity.User;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @author gaojun.zhou
@@ -10,4 +13,7 @@ import com.example.entity.User;
 public interface UserMapper {
 
     User selectById(Integer id);
+
+    @Select("select * from tb_user")
+    List<User> selectAll();
 }
