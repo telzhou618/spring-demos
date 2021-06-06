@@ -21,5 +21,8 @@
         <module>spring-bean-demo</module>
         <module>spring-bean-demos</module>
         <module>spring-mapper-scanner-demo</module>
+        <module>spring-aop-demo</module>
+        <module>spring-transaction-demo</module>
+        <module>spring-mvc-demo</module>
     </modules>
 </project>
