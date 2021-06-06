@@ -1,4 +1,4 @@
-package com.example.bean;
+package com.example.regester.bean;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -13,9 +13,13 @@ import java.util.Arrays;
 @Component
 public class MyBeanFactoryProcessor implements BeanFactoryPostProcessor {
 
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+    public MyBeanFactoryProcessor() {
+        System.out.println("实例化 BeanFactoryPostProcessor");
+    }
 
-        System.out.print("BeanDefinitionCount ->" + beanFactory.getBeanDefinitionCount());
-        System.out.println(",BeanDefinitionNames ->" + Arrays.toString(beanFactory.getBeanDefinitionNames()));
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        System.out.println("BeanDefinitionCount ->" + beanFactory.getBeanDefinitionCount());
+        System.out.println("BeanDefinitionNames ->" + Arrays.toString(beanFactory.getBeanDefinitionNames()));
     }
 }
